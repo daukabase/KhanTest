@@ -4,9 +4,6 @@ PODS:
   - PinLayout (1.8.9)
   - YandexMapKit (3.4):
     - YandexRuntime (= 3.4)
-  - YandexMapKitSearch (3.4):
-    - YandexMapKit (= 3.4)
-    - YandexRuntime (= 3.4)
   - YandexRuntime (3.4)
 
 DEPENDENCIES:
@@ -14,7 +11,6 @@ DEPENDENCIES:
   - Kingfisher
   - PinLayout
   - YandexMapKit (= 3.4)
-  - YandexMapKitSearch (= 3.4)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -22,7 +18,6 @@ SPEC REPOS:
     - Kingfisher
     - PinLayout
     - YandexMapKit
-    - YandexMapKitSearch
     - YandexRuntime
 
 SPEC CHECKSUMS:
@@ -30,9 +25,8 @@ SPEC CHECKSUMS:
   Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
   PinLayout: f7237c104696f409470947fee3ac82e239cac367
   YandexMapKit: f222923561fe159dd8480d927f61950fc5ff3b8d
-  YandexMapKitSearch: 9d658009a11ce4973e5b1c59aacb72c3f63c808a
   YandexRuntime: 2547d72a3ce4757f16ad188cfbe8a124ae13d806
 
-PODFILE CHECKSUM: fbdd03f8f23b8439526fa59c7141ca7cdd65a223
+PODFILE CHECKSUM: df46cf57da305c2c665ba8787ff1a40228284708
 
 COCOAPODS: 1.7.3

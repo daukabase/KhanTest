@@ -35,7 +35,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flower" translatesAutoresizingMaskIntoConstraints="NO" id="ZD6-3w-LKa">
-                                <rect key="frame" x="218" y="0.0" width="164.00000000000023" height="114.50000000000023"/>
+                                <rect key="frame" x="218" y="0.0" width="164" height="114.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="164" id="cAa-Lg-o7k"/>
                                 </constraints>

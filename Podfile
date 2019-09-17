@@ -1,13 +1,15 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'KhanTest' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
+def common_pods
   pod 'YandexMapKit', '3.4'
   pod 'Alamofire'
   pod 'Kingfisher'
   pod 'PinLayout'
+end
 
+target 'KhanTest' do
+  use_frameworks!
+  
+  common_pods
 end
