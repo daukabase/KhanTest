@@ -8,27 +8,6 @@
 
 import Foundation
 
-struct Location: Decodable {
-    
-    enum CodingKeys: String, CodingKey {
-        case zoom
-        case centerX
-        case centerY
-    }
-    
-    let longitude: Double
-    let latitude: Double
-    let zoom: Float
-    
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        longitude = try container.decode(Double.self, forKey: .centerX)
-        latitude = try container.decode(Double.self, forKey: .centerY)
-        zoom = try container.decode(Float.self, forKey: .zoom)
-    }
-    
-}
-
 struct SalonDetailedInfo: Decodable {
     
     enum CodingKeys: CodingKey {
@@ -54,6 +33,7 @@ struct SalonDetailedInfo: Decodable {
     var addressText: String? {
         return address.htmlStyled?.string
     }
+    
     let id: Int
     let name: String
     let address: String
@@ -61,6 +41,7 @@ struct SalonDetailedInfo: Decodable {
     let picturesUrls: [String]
     let phoneNumbers: [String]
     var location: Location? = nil
+    
     private let workStartTime: Date
     private let workEndTime: Date
     

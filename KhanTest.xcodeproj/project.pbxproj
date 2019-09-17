@@ -29,6 +29,8 @@
 		B099F565232C31840018A390 /* SalonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099F564232C31840018A390 /* SalonInfo.swift */; };
 		B0ADC18923314AB400718006 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ADC18823314AB400718006 /* JSONDecoder.swift */; };
 		B0ADC18D2331536C00718006 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ADC18C2331536C00718006 /* ActivityView.swift */; };
+		B0ADC19023315A2B00718006 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ADC18F23315A2B00718006 /* Location.swift */; };
+		B0ADC19323315AE400718006 /* SalonsType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ADC19223315AE400718006 /* SalonsType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		B099F564232C31840018A390 /* SalonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalonInfo.swift; sourceTree = "<group>"; };
 		B0ADC18823314AB400718006 /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
 		B0ADC18C2331536C00718006 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		B0ADC18F23315A2B00718006 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		B0ADC19223315AE400718006 /* SalonsType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalonsType.swift; sourceTree = "<group>"; };
 		F41B59D93317B351AD0A4C16 /* Pods_KhanTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhanTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -210,6 +214,7 @@
 			children = (
 				B099F562232C316D0018A390 /* SalonDetailedInfo.swift */,
 				B099F564232C31840018A390 /* SalonInfo.swift */,
+				B0ADC18F23315A2B00718006 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -242,10 +247,19 @@
 		B0ADC18E2331598F00718006 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				B0ADC19123315AD800718006 /* Types */,
 				B099F545232C22E90018A390 /* Extensions */,
 				B0ADC18A2331534600718006 /* Reusable Layer */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		B0ADC19123315AD800718006 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				B0ADC19223315AE400718006 /* SalonsType.swift */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 		C87DD94589931D69FAC87976 /* Frameworks */ = {
@@ -394,6 +408,8 @@
 				B099F542232C1FAF0018A390 /* SalonCell.swift in Sources */,
 				B099F55A232C28150018A390 /* SalonService.swift in Sources */,
 				B05CE148232C4F780042E4CC /* UIStoryboard.swift in Sources */,
+				B0ADC19323315AE400718006 /* SalonsType.swift in Sources */,
+				B0ADC19023315A2B00718006 /* Location.swift in Sources */,
 				B0ADC18923314AB400718006 /* JSONDecoder.swift in Sources */,
 				B099F540232C1F710018A390 /* SalonsViewController.swift in Sources */,
 				B05CE13E232C486F0042E4CC /* SalonViewController.swift in Sources */,

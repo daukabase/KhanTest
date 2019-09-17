@@ -9,15 +9,9 @@
 import Foundation
 import Alamofire
 
-enum SalonsType: String {
-    case popular = "getPopular"
-    case recommended = "getRecommended"
-    case recent = "getRecentlyAdded"
-}
-
 class SalonService: SalonAbstractService {
     
-    // TODO: ask for pagination
+    // TODO: ask about pagination
     
     func fetchSalons(for type: SalonsType, onSuccess: @escaping ([SalonInfo]) -> Void) {
         guard let url = URL(string: type.rawValue, relativeTo: URLs.salon) else {

@@ -50,11 +50,11 @@ private extension SalonViewController {
         guard let id = salonId else {
             return
         }
-        activityView.isHidden = false
+        activityView.start()
         service.fetchSalon(with: String(id)) { [weak self] salon in
             self?.salon = salon
             self?.updateUI()
-            self?.activityView.isHidden = true
+            self?.activityView.stop()
             self?.setupMap(for: salon.location)
         }
     }
