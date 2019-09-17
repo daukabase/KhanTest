@@ -8,9 +8,35 @@
 
 import Foundation
 
+struct Location: Decodable {
+    
+    enum CodingKeys: String, CodingKey {
+        case zoom
+        case centerX
+        case centerY
+    }
+    
+    let longitude: Double
+    let latitude: Double
+    let zoom: Float
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        longitude = try container.decode(Double.self, forKey: .centerX)
+        latitude = try container.decode(Double.self, forKey: .centerY)
+        zoom = try container.decode(Float.self, forKey: .zoom)
+    }
+    
+}
+
 struct SalonDetailedInfo: Decodable {
     
     enum CodingKeys: CodingKey {
+        case salon
+        case location
+    }
+    
+    enum SalonCodingKeys: CodingKey {
         case id
         case name
         case address
@@ -19,6 +45,7 @@ struct SalonDetailedInfo: Decodable {
         case checkRating
         case pictures
         case phoneNumbers
+        case location
     }
     
     var worktime: String {
@@ -33,19 +60,24 @@ struct SalonDetailedInfo: Decodable {
     let rating: Int
     let picturesUrls: [String]
     let phoneNumbers: [String]
+    var location: Location? = nil
     private let workStartTime: Date
     private let workEndTime: Date
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        id = try container.decode(Int.self, forKey: .id)
-        name = try container.decode(String.self, forKey: .name)
-        address = try container.decode(String.self, forKey: .address)
-        workStartTime = try container.decode(Date.self, forKey: .workStartTime)
-        workEndTime = try container.decode(Date.self, forKey: .workEndTime)
-        rating = try container.decode(Int.self, forKey: .checkRating)
-        picturesUrls = try container.decode([String].self, forKey: .pictures)
-        phoneNumbers = try container.decode([String].self, forKey: .phoneNumbers)
+        location = try container.decodeIfPresent(Location.self, forKey: .location)
+        
+        let salonContainer = try container.nestedContainer(keyedBy: SalonCodingKeys.self, forKey: .salon)
+        id = try salonContainer.decode(Int.self, forKey: .id)
+        name = try salonContainer.decode(String.self, forKey: .name)
+        address = try salonContainer.decode(String.self, forKey: .address)
+        workStartTime = try salonContainer.decode(Date.self, forKey: .workStartTime)
+        workEndTime = try salonContainer.decode(Date.self, forKey: .workEndTime)
+        rating = try salonContainer.decode(Int.self, forKey: .checkRating)
+        picturesUrls = try salonContainer.decode([String].self, forKey: .pictures)
+        phoneNumbers = try salonContainer.decode([String].self, forKey: .phoneNumbers)
+        
     }
     
 }

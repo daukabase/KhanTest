@@ -54,15 +54,13 @@ class SalonService: SalonAbstractService {
         request(url).validate().responseJSON { (response) in
             switch response.result {
             case .success(let value):
-                guard let data = (value as? [String: Any])?["salon"] else {
+                guard let data = value as? JSON else {
                     return
                 }
                 do {
                     let jsonData = try JSONSerialization.data(withJSONObject: data, options: [])
+                    let salon = try JSONDecoder(formatter: .ddMMYYYYHHmm).decode(SalonDetailedInfo.self, from: jsonData)
                     
-                    let decoder = JSONDecoder()
-                    decoder.dateDecodingStrategy = .formatted(.ddMMYYYYHHmm)
-                    let salon = try decoder.decode(SalonDetailedInfo.self, from: jsonData)
                     onSuccess(salon)
                 } catch {
                     // TODO: handle error

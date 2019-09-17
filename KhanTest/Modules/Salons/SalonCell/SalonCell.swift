@@ -28,7 +28,7 @@ class SalonCell: UITableViewCell {
         guard let urlString = model.pictureUrl else {
             return
         }
-        let url = URL(string: URLs.mainURL + urlString)
+        let url = URL(string: urlString, relativeTo: URLs.main)
         salonImageView.kf.setImage(with: url)
     }
 
@@ -38,9 +38,10 @@ private extension SalonCell {
     
     func commonInit() {
         nameLabel.textColor = UIColor.blackText
-        containerView.dropShadow()
         containerView.clipsToBounds = true
         containerView.layer.cornerRadius = 3
+        containerView.layer.borderWidth = 1
+        containerView.layer.borderColor = UIColor.gray.withAlphaComponent(0.3).cgColor
     }
     
 }

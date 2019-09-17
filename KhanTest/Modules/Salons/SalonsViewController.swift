@@ -24,14 +24,10 @@ final class SalonsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(
-            UINib(
-                nibName: SalonCell.identifier,
-                bundle: nil
-            ),
+            UINib(nibName: SalonCell.identifier, bundle: nil),
             forCellReuseIdentifier: SalonCell.identifier
         )
         tableView.separatorStyle = .none
-        tableView.backgroundColor = UIColor.grayBackground
         tableView.contentInset.top = 8
         return tableView
     }()
@@ -89,9 +85,7 @@ extension SalonsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SalonCell.identifier, for: indexPath) as! SalonCell
-        
         cell.configure(model: salons[indexPath.row])
-        
         return cell
     }
     
@@ -101,6 +95,7 @@ extension SalonsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
         // TODO: Refactor that vc shouldn't know about SalonViewController
         guard let salonViewController = UIStoryboard.instantiate(ofType: SalonViewController.self) else {
             return

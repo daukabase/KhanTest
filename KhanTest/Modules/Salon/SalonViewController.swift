@@ -9,7 +9,6 @@
 import UIKit
 import PinLayout
 import YandexMapKit
-import YandexMapKitSearch
 
 final class SalonViewController: UIViewController {
     
@@ -20,20 +19,11 @@ final class SalonViewController: UIViewController {
     @IBOutlet weak var contactsLabel: UILabel!
     @IBOutlet weak var mapView: YMKMapView!
     
-    lazy var activityIndicatorView: UIView = {
-        // TODO: refactor, create new file
-        let activityView = UIView()
-        let indicator = UIActivityIndicatorView(style: .gray)
-        indicator.startAnimating()
-        activityView.addSubview(indicator)
-        activityView.backgroundColor = .white
-        activityView.isHidden = true
-        return activityView
-    }()
+    lazy var activityView = ActivityView(frame: .zero)
     
     var salonId: Int?
-    
     lazy var service: SalonAbstractService = SalonService()
+    
     private var salon: SalonDetailedInfo?
     
     override func viewDidLoad() {
@@ -44,45 +34,55 @@ final class SalonViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        activityIndicatorView.pin.all()
-        activityIndicatorView.subviews.first?.pin.center()
+        activityView.pin.all()
+    }
+
+}
+
+private extension SalonViewController {
+
+    func commonInit() {
+        view.addSubview(activityView)
+        imageView.layer.cornerRadius = 7
     }
     
-    private func commonInit() {
-        view.addSubview(activityIndicatorView)
-        imageView.layer.cornerRadius = 3
-        imageView.dropShadow()
-        setupMap()
-    }
-    
-    private func setupMap() {
-        // TODO: configure location display
-        
-        let TARGET_LOCATION = YMKPoint(latitude: 59.945933, longitude: 30.320045)
-        
-        mapView.mapWindow.map.move(
-            with: YMKCameraPosition(target: TARGET_LOCATION, zoom: 15, azimuth: 0, tilt: 0),
-            animationType: YMKAnimation(type: YMKAnimationType.smooth, duration: 5),
-            cameraCallback: nil)
-    }
-    
-    private func loadData() {
+    func loadData() {
         guard let id = salonId else {
             return
         }
-        activityIndicatorView.isHidden = false
+        activityView.isHidden = false
         service.fetchSalon(with: String(id)) { [weak self] salon in
             self?.salon = salon
             self?.updateUI()
-            self?.activityIndicatorView.isHidden = true
+            self?.activityView.isHidden = true
+            self?.setupMap(for: salon.location)
         }
     }
     
-    private func updateUI() {
+    func setupMap(for location: Location?) {
+        guard let location = location else {
+            mapView.isHidden = true
+            return
+        }
+        let salonLocation = YMKPoint(latitude: location.latitude, longitude: location.longitude)
+        let cameraPosition = YMKCameraPosition(target: salonLocation, zoom: Float(location.zoom), azimuth: 0, tilt: 0)
+        mapView.mapWindow.map.move(
+            with: cameraPosition,
+            animationType: YMKAnimation(type: YMKAnimationType.linear, duration: 0),
+            cameraCallback: nil
+        )
+    }
+    
+    func updateUI() {
         guard let salon = salon else {
             return
         }
-        
+        // Actually I can use DispatchGroup and load this images
+        // after display it on view, but it will take time,
+        // if its needed I can  implement it.
+        if let imageURL = salon.picturesUrls.first {
+            imageView.kf.setImage(with: URL(string: imageURL, relativeTo: URLs.main))
+        }
         nameLabel.text = salon.name
         addressLabel.text = salon.addressText
         contactsLabel.text = salon.phoneNumbers.joined(separator: "\n")

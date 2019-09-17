@@ -19,7 +19,6 @@
 		B099F540232C1F710018A390 /* SalonsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099F53F232C1F710018A390 /* SalonsViewController.swift */; };
 		B099F542232C1FAF0018A390 /* SalonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099F541232C1FAF0018A390 /* SalonCell.swift */; };
 		B099F544232C1FB60018A390 /* SalonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B099F543232C1FB60018A390 /* SalonCell.xib */; };
-		B099F54E232C22E90018A390 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099F548232C22E90018A390 /* UIView.swift */; };
 		B099F54F232C22E90018A390 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099F549232C22E90018A390 /* String.swift */; };
 		B099F551232C22E90018A390 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099F54B232C22E90018A390 /* UIColor.swift */; };
 		B099F553232C272D0018A390 /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099F552232C272D0018A390 /* UITableViewCell.swift */; };
@@ -28,6 +27,8 @@
 		B099F560232C2A130018A390 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099F55F232C2A130018A390 /* Constants.swift */; };
 		B099F563232C316D0018A390 /* SalonDetailedInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099F562232C316D0018A390 /* SalonDetailedInfo.swift */; };
 		B099F565232C31840018A390 /* SalonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B099F564232C31840018A390 /* SalonInfo.swift */; };
+		B0ADC18923314AB400718006 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ADC18823314AB400718006 /* JSONDecoder.swift */; };
+		B0ADC18D2331536C00718006 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ADC18C2331536C00718006 /* ActivityView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +47,6 @@
 		B099F53F232C1F710018A390 /* SalonsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalonsViewController.swift; sourceTree = "<group>"; };
 		B099F541232C1FAF0018A390 /* SalonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalonCell.swift; sourceTree = "<group>"; };
 		B099F543232C1FB60018A390 /* SalonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SalonCell.xib; sourceTree = "<group>"; };
-		B099F548232C22E90018A390 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		B099F549232C22E90018A390 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		B099F54B232C22E90018A390 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		B099F552232C272D0018A390 /* UITableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
@@ -55,6 +55,8 @@
 		B099F55F232C2A130018A390 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		B099F562232C316D0018A390 /* SalonDetailedInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalonDetailedInfo.swift; sourceTree = "<group>"; };
 		B099F564232C31840018A390 /* SalonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SalonInfo.swift; sourceTree = "<group>"; };
+		B0ADC18823314AB400718006 /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
+		B0ADC18C2331536C00718006 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		F41B59D93317B351AD0A4C16 /* Pods_KhanTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KhanTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 				B05CE142232C4DEB0042E4CC /* Date.swift */,
 				B05CE141232C4DEB0042E4CC /* Formatter.swift */,
 				B099F549232C22E90018A390 /* String.swift */,
+				B0ADC18823314AB400718006 /* JSONDecoder.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -101,7 +104,6 @@
 		B05CE146232C4DF80042E4CC /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				B099F548232C22E90018A390 /* UIView.swift */,
 				B099F54B232C22E90018A390 /* UIColor.swift */,
 				B099F552232C272D0018A390 /* UITableViewCell.swift */,
 				B05CE147232C4F780042E4CC /* UIStoryboard.swift */,
@@ -132,9 +134,8 @@
 			children = (
 				B099F53B232C1F160018A390 /* Application */,
 				B099F561232C31650018A390 /* Models */,
-				B099F554232C28150018A390 /* Repository */,
+				B099F554232C28150018A390 /* Services */,
 				B099F53D232C1F470018A390 /* Modules */,
-				B099F535232C1CB40018A390 /* Info.plist */,
 				B099F53C232C1F220018A390 /* Resources */,
 				B099F545232C22E90018A390 /* Extensions */,
 			);
@@ -146,6 +147,7 @@
 			children = (
 				B099F529232C1CB20018A390 /* AppDelegate.swift */,
 				B099F532232C1CB40018A390 /* LaunchScreen.storyboard */,
+				B099F535232C1CB40018A390 /* Info.plist */,
 				B099F55F232C2A130018A390 /* Constants.swift */,
 			);
 			path = Application;
@@ -154,6 +156,7 @@
 		B099F53C232C1F220018A390 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B0ADC18A2331534600718006 /* Reusable Layer */,
 				B099F530232C1CB40018A390 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -186,12 +189,12 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		B099F554232C28150018A390 /* Repository */ = {
+		B099F554232C28150018A390 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				B099F555232C28150018A390 /* SalonService */,
 			);
-			path = Repository;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		B099F555232C28150018A390 /* SalonService */ = {
@@ -219,6 +222,22 @@
 				B099F543232C1FB60018A390 /* SalonCell.xib */,
 			);
 			path = SalonCell;
+			sourceTree = "<group>";
+		};
+		B0ADC18A2331534600718006 /* Reusable Layer */ = {
+			isa = PBXGroup;
+			children = (
+				B0ADC18B2331535700718006 /* ActivityView */,
+			);
+			path = "Reusable Layer";
+			sourceTree = "<group>";
+		};
+		B0ADC18B2331535700718006 /* ActivityView */ = {
+			isa = PBXGroup;
+			children = (
+				B0ADC18C2331536C00718006 /* ActivityView.swift */,
+			);
+			path = ActivityView;
 			sourceTree = "<group>";
 		};
 		C87DD94589931D69FAC87976 /* Frameworks */ = {
@@ -363,11 +382,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B099F54E232C22E90018A390 /* UIView.swift in Sources */,
 				B05CE144232C4DEB0042E4CC /* Date.swift in Sources */,
 				B099F542232C1FAF0018A390 /* SalonCell.swift in Sources */,
 				B099F55A232C28150018A390 /* SalonService.swift in Sources */,
 				B05CE148232C4F780042E4CC /* UIStoryboard.swift in Sources */,
+				B0ADC18923314AB400718006 /* JSONDecoder.swift in Sources */,
 				B099F540232C1F710018A390 /* SalonsViewController.swift in Sources */,
 				B05CE13E232C486F0042E4CC /* SalonViewController.swift in Sources */,
 				B099F55E232C292F0018A390 /* SalonAbstractService.swift in Sources */,
@@ -378,6 +397,7 @@
 				B05CE143232C4DEB0042E4CC /* Formatter.swift in Sources */,
 				B099F563232C316D0018A390 /* SalonDetailedInfo.swift in Sources */,
 				B099F553232C272D0018A390 /* UITableViewCell.swift in Sources */,
+				B0ADC18D2331536C00718006 /* ActivityView.swift in Sources */,
 				B099F551232C22E90018A390 /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,7 +539,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNA8QM22SG;
-				INFOPLIST_FILE = KhanTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/KhanTest/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -538,7 +558,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JNA8QM22SG;
-				INFOPLIST_FILE = KhanTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/KhanTest/Application/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

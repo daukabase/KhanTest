@@ -12,7 +12,7 @@ import Foundation
 
 enum URLs {
     static let salonURL = "http://zp.jgroup.kz/rest/v1/salon/"
-    static let mainURL = "http://zp.jgroup.kz/rest/v1/"
+    static let mainURL = "http://zp.jgroup.kz/"
     
     static var main: URL? {
         return URL(string: mainURL)
@@ -22,3 +22,5 @@ enum URLs {
         return URL(string: salonURL)
     }
 }
+
+typealias JSON = [String: Any]
