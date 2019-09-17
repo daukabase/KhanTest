@@ -77,7 +77,6 @@ struct SalonDetailedInfo: Decodable {
         rating = try salonContainer.decode(Int.self, forKey: .checkRating)
         picturesUrls = try salonContainer.decode([String].self, forKey: .pictures)
         phoneNumbers = try salonContainer.decode([String].self, forKey: .phoneNumbers)
-        
     }
     
 }

@@ -22,20 +22,20 @@
                         <rect key="frame" x="16" y="8" width="382" height="114.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnt-r2-OQb">
-                                <rect key="frame" x="32" y="32" width="170" height="19.5"/>
+                                <rect key="frame" x="32" y="32" width="40.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2Z-ek-M96">
-                                <rect key="frame" x="28" y="55.5" width="178" height="1"/>
+                                <rect key="frame" x="28" y="55.5" width="48.5" height="1"/>
                                 <color key="backgroundColor" red="0.6705882352941176" green="0.12156862745098039" blue="0.45098039215686275" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="rfb-sH-4UA"/>
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flower" translatesAutoresizingMaskIntoConstraints="NO" id="ZD6-3w-LKa">
-                                <rect key="frame" x="218" y="0.0" width="164" height="114.5"/>
+                                <rect key="frame" x="218" y="0.0" width="164.00000000000023" height="114.50000000000023"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="164" id="cAa-Lg-o7k"/>
                                 </constraints>
@@ -43,7 +43,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="ZD6-3w-LKa" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Cnt-r2-OQb" secondAttribute="trailing" constant="16" id="L9k-3q-s2I"/>
+                            <constraint firstItem="ZD6-3w-LKa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Cnt-r2-OQb" secondAttribute="trailing" constant="16" id="L9k-3q-s2I"/>
                             <constraint firstItem="U2Z-ek-M96" firstAttribute="trailing" secondItem="Cnt-r2-OQb" secondAttribute="trailing" constant="4" id="LDx-7d-fKa"/>
                             <constraint firstItem="ZD6-3w-LKa" firstAttribute="top" secondItem="pp4-YP-1zX" secondAttribute="top" id="MRs-pD-Kb9"/>
                             <constraint firstAttribute="trailing" secondItem="ZD6-3w-LKa" secondAttribute="trailing" id="MV9-Ju-UBu"/>
